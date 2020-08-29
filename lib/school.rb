@@ -9,11 +9,7 @@ class School
   end
 
   def add_student(name, grade)
-    if self.roster[grade]
-      self.roster[grade].push(name)
-    else
-      self.roster[grade] = [name]
-    end
+    (self.roster[grade]) ? self.roster[grade].push(name) : self.roster[grade] = [name]
   end
 
   def grade(grade)
@@ -26,12 +22,4 @@ class School
 
 end
 
-# flatiron = School.new("Hyrum")
-# flatiron.add_student("hyrum", 9)
-# flatiron.add_student("mike", 9)
-# flatiron.add_student("Adam", 9)
-# # flatiron.add_student("hyrum", 10)
-# # flatiron.add_student("mike", 10)
-# # flatiron.add_student("Adam", 10)
-# p flatiron.roster
-# p flatiron.sort
+
